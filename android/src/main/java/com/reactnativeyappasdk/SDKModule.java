@@ -33,10 +33,7 @@ public class SDKModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void initialize(String apiKey, String appId) {
        YappaSDK.INSTANCE.initialize("aefab81bcc7b2e83d619b6e8f90a6029", 1, this.context); // Lo primero que se tiene que llamar antes que nada
-       YappaSDK.INSTANCE.setAppId(1);
        YappaSDK.INSTANCE.setAppIcon(33);
-       YappaSDK.INSTANCE.setContentUrl("https://qa-site.yappaapp.com/qa-demo/");
-       YappaSDK.INSTANCE.show();
     }
 
     @ReactMethod
