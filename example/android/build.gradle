@@ -17,6 +17,7 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
 }
 
 allprojects {
@@ -35,7 +36,7 @@ allprojects {
         jcenter()
         maven { url 'https://www.jitpack.io' }
         maven {
-            url uri('file:///C:/Users/Axel/Documents/YAPPASDK')
+            url uri('file:///C:/Users/LENOVO/Documents/YAPPASDK')
         }
     }
 }

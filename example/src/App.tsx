@@ -1,18 +1,17 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import Yappasdk from 'react-native-yappasdk';
+import YappaSDK, { YappaActionButton } from 'react-native-yappasdk';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
 
-  React.useEffect(() => {
-    Yappasdk.multiply(3, 7).then(setResult);
-  }, []);
+  YappaSDK.initialize("aefab81bcc7b2e83d619b6e8f90a6029", "1"); // AppID
+  YappaSDK.setCallbackScheme("com.yappa.ios");
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>YappaSDK React Native</Text>
+      <YappaActionButton contentUrl="https://qa-site.yappaapp.com/qa-demo/" contentId="" />
     </View>
   );
 }
