@@ -14,5 +14,4 @@ RCT_EXTERN_METHOD(show)
 
 RCT_EXTERN_METHOD(close)
 
-
 @end

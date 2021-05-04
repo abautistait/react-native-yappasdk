@@ -32,6 +32,6 @@ class Yappasdk: NSObject {
 
     @objc(close)
     func close() {
-        
+        //TO-DO
     }
 }
