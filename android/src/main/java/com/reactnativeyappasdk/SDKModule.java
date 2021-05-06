@@ -45,7 +45,7 @@ public class SDKModule extends ReactContextBaseJavaModule {
     public void show() {
        YappaSDK.INSTANCE.show();
     }
-    
+
     @ReactMethod
     public void close() {
        YappaSDK.INSTANCE.close();
@@ -56,7 +56,7 @@ public class SDKModule extends ReactContextBaseJavaModule {
         // TODO parse string
        // YappaSDK.INSTANCE.setAppId(contentId);
     }
-    
+
     @ReactMethod
     public void setContentUrl(String contentUrl) {
        YappaSDK.INSTANCE.setContentUrl(contentUrl);

@@ -8,7 +8,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.1'
+    classpath 'com.android.tools.build:gradle:4.1.0'
     // noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
@@ -126,6 +126,6 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
-  implementation 'com.yappa.sdk:yappa-sdk:1.0.27'
+  implementation 'org.bitbucket.gm2dev-project-y:yappa-sdk-android:v1.0.27'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
