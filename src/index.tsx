@@ -9,6 +9,7 @@ type YappasdkType = {
   setContentId(id: string) : void;
   show() : void;
   close() : void;
+  handleNotification(): Promise<ContentCallback>
 };
 
 const { Yappasdk } = NativeModules;

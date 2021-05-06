@@ -34,4 +34,10 @@ class Yappasdk: NSObject {
     func close() {
         //TO-DO
     }
+
+    @objc(handleNotification)
+    func handleNotification(_ resolve: @escaping RCTPromiseResolveBlock,
+                            rejecter reject: @escaping RCTPromiseRejectBlock ) -> Void {
+                                // TODO resolve("")
+    }
 }

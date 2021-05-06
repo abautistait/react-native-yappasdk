@@ -7,6 +7,12 @@ export default function App() {
 
   YappaSDK.initialize("aefab81bcc7b2e83d619b6e8f90a6029", "1"); // AppID
   YappaSDK.setCallbackScheme("com.yappa.ios");
+  YappaSDK.handleNotification().then( callback => {
+    const { contentId, contentUrl } = callback;
+
+    // Handle app navigation
+
+  });
 
   return (
     <View style={styles.container}>

@@ -14,4 +14,7 @@ RCT_EXTERN_METHOD(show)
 
 RCT_EXTERN_METHOD(close)
 
+RCT_EXTERN_METHOD(handleNotification: (RCTPromiseResolveBlock)resolve
+                                  rejecter:(RCTPromiseRejectBlock)reject)
+
 @end
