@@ -1,6 +1,6 @@
 {
   "name": "react-native-yappasdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Yappa SDK - Audio & Video Commenting tool",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
