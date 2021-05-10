@@ -68,6 +68,6 @@ public class SDKModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void handleNotification(Promise b) {
-         promise.resolve("hello") // TODO check type
+      //   promise.resolve("hello") // TODO check type
     }
 }
