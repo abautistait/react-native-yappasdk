@@ -22,8 +22,7 @@ const { Yappasdk } = NativeModules;
 Yappasdk.handleRemoteNotification = (
   callback: (contentId?: string, contentUrl?: string) => void
 ) => {
-
-  console.log("Init remote");
+  console.log('Init remote');
   const setCallback = (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
     Yappasdk.handleNotification(remoteMessage).then((data: any) => {
       console.log('-- data received', data);
@@ -51,20 +50,19 @@ Yappasdk.handleRemoteNotification = (
           });
       }
     });
-    return;
 
- // messaging().onMessage(async (remoteMessage) => {
- //   console.log('-- onMessage');
- //   setCallback(remoteMessage);
- // });
- // messaging().setBackgroundMessageHandler(async (remoteMessage) => {
- //   console.log('-- setBackgroundMessageHandler');
- //   setCallback(remoteMessage);
- // });
- // messaging().onNotificationOpenedApp((remoteMessage) => {
- //   console.log('-- onNotificationOpenedApp');
- //   setCallback(remoteMessage);
- // });
+  messaging().onMessage(async (remoteMessage) => {
+    console.log('-- onMessage');
+    setCallback(remoteMessage);
+  });
+  messaging().setBackgroundMessageHandler(async (remoteMessage) => {
+    console.log('-- setBackgroundMessageHandler');
+    setCallback(remoteMessage);
+  });
+  messaging().onNotificationOpenedApp((remoteMessage) => {
+    console.log('-- onNotificationOpenedApp');
+    setCallback(remoteMessage);
+  });
 };
 
 export { YappaActionButton };
