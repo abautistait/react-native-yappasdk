@@ -1,4 +1,4 @@
-package com.example.reactnativeyappasdk;
+package com.yappa.app;
 
 import com.facebook.react.ReactActivity;
 

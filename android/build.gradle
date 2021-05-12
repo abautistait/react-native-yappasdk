@@ -127,7 +127,7 @@ def kotlin_version = getExtOrDefault('kotlinVersion')
 dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
-  implementation 'org.bitbucket.gm2dev-project-y:yappa-sdk-android:v1.0.27'
+  implementation 'org.bitbucket.gm2dev-project-y:yappa-sdk-android:-SNAPSHOT'
   implementation platform('com.google.firebase:firebase-bom:26.2.0')
   implementation 'com.google.firebase:firebase-messaging-ktx'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

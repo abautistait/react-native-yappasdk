@@ -13,23 +13,13 @@ type YappasdkType = {
   show(): void;
   close(): void;
   handleRemoteNotification(
-    callback: (contentId?: string, contentUrl?: string) => void
+    callback: (contentId: string, contentUrl: string, showSdk: () => void) => void
   ): void;
 };
 
 const { Yappasdk } = NativeModules;
 
-Yappasdk.handleRemoteNotification = (
-  callback: (contentId?: string, contentUrl?: string) => void
-) => {
-  console.log('Init remote');
-  const setCallback = (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
-    Yappasdk.handleNotification(remoteMessage).then((data: any) => {
-      console.log('-- data received', data);
-      callback(data.contentId, data.originalUrl);
-    });
-  };
-
+Yappasdk.handleRemoteNotification = (callback: (contentId: string, contentUrl: string, showSdk: () => void) => void) => {
   messaging()
     .requestPermission()
     .then((authStatus) => {
@@ -53,15 +43,21 @@ Yappasdk.handleRemoteNotification = (
 
   messaging().onMessage(async (remoteMessage) => {
     console.log('-- onMessage');
-    setCallback(remoteMessage);
-  });
-  messaging().setBackgroundMessageHandler(async (remoteMessage) => {
-    console.log('-- setBackgroundMessageHandler');
-    setCallback(remoteMessage);
+    Yappasdk.handleNotificationForeground(remoteMessage);
   });
   messaging().onNotificationOpenedApp((remoteMessage) => {
     console.log('-- onNotificationOpenedApp');
-    setCallback(remoteMessage);
+
+    if(remoteMessage.data){
+      const contentId = remoteMessage.data.contentId;
+      const contentUrl = remoteMessage.data.originalUrl;
+
+      callback(contentId || "", contentUrl || "", () => {
+        Yappasdk.handleNotification(remoteMessage)
+      });
+    }
+
+
   });
 };
 
